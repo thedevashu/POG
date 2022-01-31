@@ -1,0 +1,134 @@
+#include<stdio.h>
+main(){
+	int arr[10]={25,30,35,40,45,55,60,65,60,85};
+	int *p
+	for(p=arr+2;p<arr+8;p+2)
+		printf("%d",*p);
+	return 0;
+}
+
+-----------------------------------------------
+Que2)
+
+#include<stdio.h>
+main(){
+	int arr[10]={25,30,35,40,45};
+	int *p =&arr[4]
+	for(int i=0;i<5;i++)
+		printf("%d",*(p-i),p[-i];
+	return 0;
+}
+
+---------------------------------------------
+
+Que3)
+#include<stdio.h>
+int main(){
+	int x,arr[8]={11,22,33,44,55,66,77,88};
+	x=(arr+2)[3]; //*(&11+2)[3]-->*(&33+3)-->(&66)
+	printf("%d",x);
+	return 0;
+}
+
+-----------------------------------------------
+
+Que4)
+
+void fun(int *ptr){
+	*ptr=30
+}
+
+int main(){
+	int a=40;
+	fun(&a);
+	print("%d",a);
+}
+
+---------------------------------------------
+
+Que5)
+#include<stdio.h>
+int main(){
+	int a=10;
+	void *p=&a;
+	int *ptr =p;
+	printf("%u %u",*p,*ptr);//complie time error becuse *p is void
+	return 0;
+}
+
+----------------------------------------------------------
+Que 6)
+//risky code
+void main(){
+	int arr[2];
+	arr[-2]=2;
+	printf(" %d",arr[2-4]);
+	return 0;
+}
+
+--------------------------------------------------
+
+
+Que 7)
+
+#include<stdio>
+int main(){
+	void demo();
+	void (*fun)();
+	fun=demo;
+	(*fun)();
+	fun();
+	return 0;
+}
+
+void demo(){
+	printf("IET");
+}
+
+------------------------------------------------------
+
+#include<stdio>
+int main(){
+	char s1[]="IET";
+	char s2[]="IET";
+	if (s1==s2)
+		printf("Same");
+	else
+		printf("Different"); 
+}
+------------------------------------------------------------------------------------------------------------------------------------
+
+int mystrcmp1(char s1[],char s2[]){
+	int i;
+	for(i=0;s1[i]==s2[i];i++)
+		if(s1[i]==0) return 0;
+	return (s1[i]-s2[i]);
+}
+
+
+
+int mystrcmp2(char *s1,char *s2){
+	
+	while((*s1!='\0')&&(*s2!='\0'))
+	{
+		if(*s1!=*s2)
+			return *s1-*s2;
+			s1++;s2++;
+	}
+	return *s1-*s2;
+	}
+}
+
+-----------------------------------------------------
+
+char *revstr(char *s){
+	int l,i;
+	char t;
+	for(l=0;s[l] != '\0';l++);
+	l=l-1;
+	for(i=0;i<l;i++;l--){
+		t=s[i];
+		s[i]=s[l];
+		s[j]=t;
+	}
+}

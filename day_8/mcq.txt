@@ -1,0 +1,15 @@
+#include<std.h>
+int main(){
+	void change_str(char *);
+	char *s ="Computer"; //constant pointer to constant
+	change_str(s);
+	printf("New String =%s",);
+	return 0;
+}
+
+void change_str(char *ptr){
+	strcpy(ptr,"Programing")
+}
+output--will complie but crash at run time
+
+it is not resizable and it is constant pointer content can change but size will not change address will also not change 

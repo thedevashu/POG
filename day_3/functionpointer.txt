@@ -1,0 +1,27 @@
+complex pointer,function pointer,fun returning pointer
+
+- function overloading:
+- function overriding:
+
+- Array of function pointer:
+- Function returning pointer:
+- Constant pointer:
+- Pointer to constant:
+- Complex pointer -poiter to 2d,3d array
+	int (*ptr)[3];
+
+ASSIGNMENT
+Que 1)=pascsal triangle
+1
+1 1
+1 2 1
+1 3 3 1
+1 4 6 4 1
+1 5 10 10 5 1
+print
+
+Que 2)wap that return a product array containing prodeuc(multiplication of integers)in the given array (passed as a parameter)excluding the integer at that index
+
+input:[2,5,7]
+op: [35,14,10]->i.e[5*7, 2*7 ,2*5]
+

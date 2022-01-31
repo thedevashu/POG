@@ -1,0 +1,24 @@
+normally stack size allocated by OS to prosses 1MB
+gcc gives 2MB
+else depend on complier.
+
+#pointer
+1.Array is constant pointer and since it is a pointer 
+we can access random position cauz it based on pointer arethmetic
+array is collection of homo values
+#use of pointer
+
+*Type of parameters?
+
+1. in-type parameter
+2. out type of parameter
+3. in-out-type
+
+
+
+
+------Types of pointer-------
+
+
+
+	

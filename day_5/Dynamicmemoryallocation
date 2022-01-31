@@ -1,0 +1,116 @@
+Dynamic memory allocation
+
+low level function to allocated memory
+
+malloc,calloc,realloc
+
+malloc return void pointer it takes no. of bytes to be allocered as parameter
+
+-------------------------------------------------------
+
+(void *) malloc(40)
+
+-------------------------------------------------------
+
+*****************<1-d array>*************************
+
+#include<stdio.h>
+int main(){
+	int *ptr,size,i;
+	printf("\n ENter size of aray");
+	scanf(" %d",&size);
+	ptr =(int *)malloc(sizeof(int)*size);
+	printf("\n ptr =%d",ptr);
+	printf("\n addres of size=%d",&size);
+	printf("\n address of i =%d",&i);
+	for (int i = 0; i < size; ++i)
+	{
+		printf("\n Enter value :");
+		scanf(" %d",ptr[i]);
+	}
+	return 0;
+}
+
+-----------------------------------------------------------
+
+*****************<2-d array>*************************
+int arr[3][3]; --> int (*ptr)[3]; --> where ptr =arr
+
+int **ptr == *a[]
+
+
+#include<stdio.h>
+int main(){
+	int **ptr,i;
+	ptr = (int **)malloc(sizeof(int *)*3);
+	for(i=0;i<3;i++){
+		ptr[i]=(int *)malloc(sizeof(int)*3);
+	}
+	read_arr(ptr);
+	}
+	void read_arr(int **ptr) //(int *a[])
+	{
+		int i,j;
+		for(i=0;i<3;i++){
+			for(j=0;j<3;j++){
+				printf("Enter value: ");
+				scanf(" %d",ptr[i][j]);
+			}
+		}
+	}
+
+
+-----------------------------------------------------
+
+*****************<3-d array>*************************
+
+#include<stdio.h>
+int main(){
+	int ***ptr;
+
+	ptr=(int ***)malloc(sizeof(int **)*2);
+	for(i=0;i<2;i++){
+		ptr[i]=(int **)malloc(sizeof(int *)*2);
+			for(int j=0;j<2;j++){
+				ptr[i][j]=(int *)malloc(sizeof(int)*2);
+			}
+		}
+		read(ptr,size);
+
+		for(i=0;i<2;i++){
+			for(int j=0;j<2;j++){
+				free(ptr[i][j]);
+			}
+			free(ptr[i]);
+		}
+		free(ptr);
+	}
+
+
+	void read(int ***a,int size)
+	{
+		int i,j,k;
+		for(i=0;i<size;i++){
+			for(j=0;j<size;j++){
+				for(k=0;k<size;k++){
+					printf("\n Enter value: ")
+					scanf(" %d",a[i][j][k]);
+				}
+			}
+		}
+	}
+
+----------------------------------------------------------------
+
+*********************char_array****************************
+	system generated string has '\0' at end 
+	but if we make string we have to put '\0' at end other wise we will not be terminate string
+
+important function
+
+1. strlen(char *s)--> length of string
+2. strcpy(char *target,char *source)--> copy string (enter '\0' 	at last after copying)
+3. strcat(char *target,char *source) --> concat two strings
+4. strcmp(char *s1,char *s2)-->if s1>s2 return +1
+								if s1<s2 return -1
+								if s1 == s2 return 0

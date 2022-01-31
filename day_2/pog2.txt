@@ -1,0 +1,15 @@
+windows file system
+A drive,Bdrive dedicated for 360kb floppy
+user drive start with c
+
+---------------------------------------------------
+Type of pointer:-
+1. NULL pointer-
+	int *ptr=NULL;
+
+2. VOID pointer-
+	int *ptr=(int *)malloc();
+
+3. WILD pointer-
+	int *ptr;
+4. Dangling pointer-
